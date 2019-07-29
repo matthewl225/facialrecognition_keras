@@ -116,6 +116,6 @@ saved_model_dir = 'save/fine_tuning'
 keras_file = "FFNN.h5"
 tf.keras.models.save_model(model, keras_file)
 
-converter = tf.contrib.lite.TocoConverter.from_keras_model_file(keras_file)
+converter = tf.contrib.lite.TFLiteConverter.from_keras_model_file(keras_file)
 tflite_model = converter.convert()
 open("FFNN.tflite", "wb").write(tflite_model)
